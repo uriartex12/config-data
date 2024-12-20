@@ -1,7 +1,3 @@
 spring:
-  mongodb:
-    auto-index-creation: true
-    uri: mongodb+srv://projectmanager:KrbDyw22XzqLbmZE@freespin.yolwbdu.mongodb.net/?retryWrites=true&w=majority
-    database: player-service
   profiles:
       active: dev
