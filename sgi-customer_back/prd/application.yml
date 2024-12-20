@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: prd
   data:
     mongodb:
       auto-index-creation: true
