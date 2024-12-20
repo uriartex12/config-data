@@ -1,6 +1,5 @@
 spring:
-  profiles:
-    active: dev
+  profiles.active: git
   data:
     mongodb:
       uri: mongodb://localhost:27017/tu_basedatos
