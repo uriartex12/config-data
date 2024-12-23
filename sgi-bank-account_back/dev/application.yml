@@ -8,3 +8,10 @@ spring:
       auto-index-creation: true
       uri: mongodb://localhost:27017/
       database: bank-account-service
+
+feign:
+  client:
+    config:
+      transaction-service:
+        url: http://localhost:8083
+        name: sgi-transaction_back
