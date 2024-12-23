@@ -9,3 +9,5 @@ spring:
       auto-index-creation: true
       uri: mongodb://localhost:27017/
       database: transaction-service
+      auditing:
+          enabled: true 
