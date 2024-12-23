@@ -1,0 +1,17 @@
+server:
+  port: 8084
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017/
+      database: credit-service
+
+feign:
+  client:
+    config:
+      transaction-service:
+        url: http://localhost:8083
+        name: sgi-transaction_back
