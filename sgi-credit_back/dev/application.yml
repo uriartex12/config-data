@@ -14,4 +14,3 @@ feign:
     config:
       transaction-service:
         url: http://localhost:8083
-        name: sgi-transaction_back
