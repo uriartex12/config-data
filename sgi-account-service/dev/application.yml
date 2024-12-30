@@ -6,7 +6,7 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
-      uri: mongodb://localhost:27017/bank-account-service?replicaSet=rs0
+      uri: mongodb://localhost:27017/
       database: bank-account-service
 
 feign:
