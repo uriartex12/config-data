@@ -41,3 +41,11 @@ feign:
         url: http://localhost:8082
       credit-service:
         url: http://localhost:8084
+        
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
