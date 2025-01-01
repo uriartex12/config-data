@@ -4,6 +4,8 @@ server:
 spring:
   profiles:
     active: dev
+  application:
+    name: bank-account-service
   data:
     mongodb:
       auto-index-creation: true
@@ -12,8 +14,8 @@ spring:
   cloud:
     resilience4j:
       circuitbreaker:
-        instances:
-          account-service:
+        configs:
+          default:
             failureRateThreshold: 50
             waitDurationInOpenState: 5s
             permittedNumberOfCallsInHalfOpenState: 3
@@ -22,16 +24,25 @@ spring:
             slidingWindowSize: 10
             eventConsumerBufferSize: 10
             registerHealthIndicator: true
-      retry:
         instances:
           account-service:
+            baseConfig: default
+      retry:
+        configs:
+          default:
             maxAttempts: 3
             waitDuration: 1s
-      timelimiter:
         instances:
           account-service:
+            baseConfig: default
+      timelimiter:
+        configs:
+          default:
             timeoutDuration: 2s
             cancelRunningFuture: true
+        instances:
+          account-service:
+            baseConfig: default
 
 feign:
   client:
@@ -44,6 +55,10 @@ feign:
         url: http://localhost:8084
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
   endpoint:
     health:
       show-details: always
