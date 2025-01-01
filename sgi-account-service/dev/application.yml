@@ -43,9 +43,10 @@ feign:
         url: http://localhost:8084
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   endpoint:
     health:
       show-details: always
-  health:
-    circuitbreakers:
-      enabled: true
