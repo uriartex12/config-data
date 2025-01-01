@@ -11,38 +11,38 @@ spring:
       auto-index-creation: true
       uri: mongodb://localhost:27017/
       database: bank-account-service
-  cloud:
-    resilience4j:
-      circuitbreaker:
-        configs:
-          default:
-            failureRateThreshold: 1 # umbral de tasa de fallos
-            waitDurationInOpenState: 5s # duración en estado abierto
-            permittedNumberOfCallsInHalfOpenState: 3 # número permitido de llamadas en estado medio abierto
-            minimumNumberOfCalls: 5 # número mínimo de llamadas para activar el cálculo del circuito
-            slidingWindowType: COUNT_BASED # tipo de ventana deslizante (COUNT_BASED o TIME_BASED)
-            slidingWindowSize: 10 # tamaño de la ventana deslizante
-            eventConsumerBufferSize: 10 # tamaño del buffer de eventos
-            registerHealthIndicator: true # registrar el indicador de salud de CircuitBreaker
-        instances:
-          account-service:
-            baseConfig: default
-      retry:
-        configs:
-          default:
-            maxAttempts: 3
-            waitDuration: 1s
-        instances:
-          account-service:
-            baseConfig: default
-      timelimiter:
-        configs:
-          default:
-            timeoutDuration: 2s
-            cancelRunningFuture: true
-        instances:
-          account-service:
-            baseConfig: default
+      
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        failureRateThreshold: 1 # umbral de tasa de fallos
+        waitDurationInOpenState: 5s # duración en estado abierto
+        permittedNumberOfCallsInHalfOpenState: 3 # número permitido de llamadas en estado medio abierto
+        minimumNumberOfCalls: 5 # número mínimo de llamadas para activar el cálculo del circuito
+        slidingWindowType: COUNT_BASED # tipo de ventana deslizante (COUNT_BASED o TIME_BASED)
+        slidingWindowSize: 10 # tamaño de la ventana deslizante
+        eventConsumerBufferSize: 10 # tamaño del buffer de eventos
+        registerHealthIndicator: true # registrar el indicador de salud de CircuitBreaker
+    instances:
+      account-service:
+        baseConfig: default
+  retry:
+    configs:
+      default:
+        maxAttempts: 3
+        waitDuration: 1s
+    instances:
+      account-service:
+        baseConfig: default
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 2s
+        cancelRunningFuture: true
+    instances:
+      account-service:
+        baseConfig: default
 
 feign:
   client:
