@@ -16,7 +16,7 @@ spring:
       circuitbreaker:
         configs:
           default:
-            failureRateThreshold: 1
+            failureRateThreshold: 0.5
             waitDurationInOpenState: 5s
             permittedNumberOfCallsInHalfOpenState: 3
             minimumNumberOfCalls: 5
