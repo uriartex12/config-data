@@ -16,7 +16,7 @@ resilience4j:
   circuitbreaker:
     configs:
       default:
-        failureRateThreshold: 1 # umbral de tasa de fallos
+        failureRateThreshold: 50 # umbral de tasa de fallos
         waitDurationInOpenState: 5s # duración en estado abierto
         permittedNumberOfCallsInHalfOpenState: 3 # número permitido de llamadas en estado medio abierto
         minimumNumberOfCalls: 5 # número mínimo de llamadas para activar el cálculo del circuito
