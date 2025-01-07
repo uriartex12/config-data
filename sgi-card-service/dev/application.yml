@@ -43,3 +43,11 @@ resilience4j:
     instances:
       card-service:
         baseConfig: default
+
+feign:
+  client:
+    config:
+      transaction-service:
+        url: http://localhost:8083
+      account-service:
+        url: http://localhost:8081
