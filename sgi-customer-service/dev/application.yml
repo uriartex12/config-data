@@ -7,5 +7,5 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
-      uri: mongodb://localhost:27017/
+      uri: mongodb://localhost:27018/
       database: customer-service
