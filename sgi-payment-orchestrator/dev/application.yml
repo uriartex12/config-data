@@ -13,3 +13,10 @@ spring:
         jaas:
           config: org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secr
 
+feign:
+  client:
+    config:
+      transaction-service:
+        url: http://localhost:8083
+      account-service:
+        url: http://localhost:8081
