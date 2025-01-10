@@ -5,6 +5,11 @@ spring:
     active: dev
   kafka:
     bootstrap-servers: localhost:9092
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
     properties:
       security:
         protocol: PLAINTEXT
