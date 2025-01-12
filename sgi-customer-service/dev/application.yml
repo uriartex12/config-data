@@ -10,3 +10,13 @@ spring:
       #uri: mongodb://host.docker.internal:27017/
       uri: mongodb://localhost:27017/
       database: customer-service
+
+feign:
+  client:
+    config:
+      credit-service:
+        url: http://localhost:8084
+      account-service:
+        url: http://localhost:8081
+      card-service:
+        url: http://localhost:8087
