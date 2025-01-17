@@ -24,7 +24,7 @@ spring:
       sasl:
         mechanism: PLAIN
         jaas:
-          config: org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secr
+          config: org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secret"
 
 resilience4j:
   circuitbreaker:

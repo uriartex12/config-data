@@ -1,8 +1,16 @@
 server:
-  port: 8089
+  port: 8091
+  
 spring:
   profiles:
     active: dev
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017/
+      database: wallet-service
+      auditing:
+          enabled: true 
   kafka:
     bootstrap-servers: localhost:9092
     producer:
@@ -17,11 +25,7 @@ spring:
         mechanism: PLAIN
         jaas:
           config: org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secret"
-
-feign:
-  client:
-    config:
-      transaction-service:
-        url: http://localhost:8083
-      account-service:
-        url: http://localhost:8081
+  redis:
+      host: ${redis.host}
+      port: ${redis.port}
+      password: ${redis.password}        
