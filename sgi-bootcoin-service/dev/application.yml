@@ -1,0 +1,31 @@
+server:
+  port: 8092
+  
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017/
+      database: bootcoin-service
+      auditing:
+          enabled: true 
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+    properties:
+      security:
+        protocol: PLAINTEXT
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secret"
+  redis:
+      host: ${redis.host}
+      port: ${redis.port}
+      password: ${redis.password}        
