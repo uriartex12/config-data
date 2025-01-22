@@ -23,6 +23,18 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/v1/customers/**
+        - id: card-service
+          uri: http://localhost:8087
+          predicates:
+            - Path=/v1/cards/**
+        - id: wallet-service
+          uri: http://localhost:8091
+          predicates:
+            - Path=/v1/wallets/**
+        - id: bootcoin-service
+          uri: http://localhost:8092
+          predicates:
+            - Path=/v1/bootcoin/**
 
 logging:
   level:
