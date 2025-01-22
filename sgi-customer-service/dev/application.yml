@@ -10,6 +10,15 @@ spring:
       #uri: mongodb://host.docker.internal:27017/
       uri: mongodb://localhost:27017/
       database: customer-service
+      
+  cloud:
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/ 
+        fetchRegistry: true 
+        registerWithEureka: true  
+        enabled: true
 
 feign:
   client:

@@ -12,6 +12,15 @@ spring:
       auditing:
           enabled: true 
 
+  cloud:
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/ 
+        fetchRegistry: true 
+        registerWithEureka: true  
+        enabled: true
+
 resilience4j:
   circuitbreaker:
     configs:

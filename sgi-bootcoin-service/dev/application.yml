@@ -11,6 +11,15 @@ spring:
       database: bootcoin-service
       auditing:
           enabled: true 
+  cloud:
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/ 
+        fetchRegistry: true 
+        registerWithEureka: true  
+        enabled: true
+        
   kafka:
     bootstrap-servers: localhost:9092
     producer:
