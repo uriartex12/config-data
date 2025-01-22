@@ -11,6 +11,16 @@ spring:
       auto-index-creation: true
       uri: mongodb://localhost:27017/
       database: bank-account-service
+
+  cloud:
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/ 
+        fetchRegistry: true 
+        registerWithEureka: true  
+        enabled: true
+
   kafka:
   bootstrap-servers: localhost:9092
   producer:
