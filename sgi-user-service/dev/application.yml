@@ -1,0 +1,17 @@
+server:
+  port: 8093
+  
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017/
+      database: user-service
+      auditing:
+          enabled: true 
+
+jwt:
+  secret-key: 4qhq8LrBfycaRHXhd4sjkfsjdkko77890sd9s9s9sdnsj92237kitreuiotrewk4qhq8LrBfycaRHXhd4sjkfsjdkko77890sd9s9s9sdnsj92237kitreuiotrewk
+  token-expiration-seconds: 3600L      
