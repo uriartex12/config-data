@@ -14,4 +14,4 @@ spring:
 
 jwt:
   secret-key: 4qhq8LrBfycaRHXhd4sjkfsjdkko77890sd9s9s9sdnsj92237kitreuiotrewk4qhq8LrBfycaRHXhd4sjkfsjdkko77890sd9s9s9sdnsj92237kitreuiotrewk
-  token-expiration-seconds: 3600L      
+  token-expiration-seconds: 3600      
