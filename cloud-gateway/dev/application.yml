@@ -35,6 +35,10 @@ spring:
           uri: http://localhost:8092
           predicates:
             - Path=/v1/bootcoin/**
+        - id: user-service
+          uri: http://localhost:8093
+          predicates:
+            - Path=/v1/user/**
 
 logging:
   level:
@@ -54,3 +58,6 @@ management:
   endpoint:
     gateway:
       enabled: true
+
+jwt:
+  secret-key: 4qhq8LrBfycaRHXhd4sjkfsjdkko77890sd9s9s9sdnsj92237kitreuiotrewk4qhq8LrBfycaRHXhd4sjkfsjdkko77890sd9s9s9sdnsj92237kitreuiotrewk
