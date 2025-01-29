@@ -7,8 +7,8 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
-      uri: mongodb://host.docker.internal:27017/
-      #uri: mongodb://localhost:27017/
+      #uri: mongodb://host.docker.internal:27017/
+      uri: mongodb://localhost:27017/
       database: bootcoin-service
       auditing:
           enabled: true 
@@ -16,8 +16,8 @@ spring:
     eureka:
       client:
         serviceUrl:
-          #defaultZone: http://localhost:8761/eureka/ 
-          defaultZone: http://host.docker.internal:8761/eureka/ 
+          defaultZone: http://localhost:8761/eureka/ 
+          #defaultZone: http://host.docker.internal:8761/eureka/ 
         fetchRegistry: true 
         registerWithEureka: true  
         enabled: true
