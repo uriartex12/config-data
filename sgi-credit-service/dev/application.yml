@@ -6,7 +6,8 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
-      uri: mongodb://localhost:27017/
+      uri: mongodb://host.docker.internal:27017/
+      #uri: mongodb://localhost:27017/
       database: credit-service
 
   cloud:
